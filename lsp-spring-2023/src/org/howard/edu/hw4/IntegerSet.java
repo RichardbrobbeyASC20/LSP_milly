@@ -73,4 +73,19 @@ public class IntegerSet{
 		}
 		return min;
 	}
+	public void add(int item)
+	{
+		boolean trust = false;
+		for(int i = 0; i < set.size(); i++)
+		{
+			if(set.get(i) == item)
+			{
+				trust = true;
+			}
+		}
+		if(trust == false)
+		{
+			set.add(item);
+		}
+	}
 }

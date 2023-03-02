@@ -116,4 +116,23 @@ public class IntegerSet{
 		IntegerSet list0 = new IntegerSet(set);
 		return list0;
 	}
+	boolean isEmpty()
+	{
+		boolean output = false;
+		if(set.size() < 1)
+		{
+			output = true;
+		}
+		return output;
+	}
+	public String toString()
+	{
+		String output = "";
+		for(int i = 0; i<set.size();i++)
+		{
+			
+			output = output + set.get(i) + ", ";
+		}
+		return output;
+	}
 }

@@ -16,5 +16,12 @@ public class IntegerSet{
 	public int length() {
 		return set.size();
 	}
-	
+	public boolean equals(IntegerSet b)
+	{
+		ArrayList<Integer> set2 = b.list;
+		if(set.size() != set2.size())
+		{
+			return false;
+		}
+	}
 }

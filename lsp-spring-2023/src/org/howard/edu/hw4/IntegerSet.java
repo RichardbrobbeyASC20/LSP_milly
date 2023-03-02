@@ -101,12 +101,19 @@ public class IntegerSet{
 	}
 	public IntegerSet union(IntegerSet set2)
 	{
-		ArrayList<Integer> temp = set;
+		ArrayList<Integer> temp = set2.set;
 		Set<Integer> st = new HashSet<>();
 		st.addAll(set);
 		st.addAll(temp);
 		ArrayList<Integer> temp2 = new ArrayList<>(st);
 		IntegerSet lt = new IntegerSet(temp2);
 		return lt;
+	}
+	public IntegerSet diff(IntegerSet list)
+	{
+		ArrayList<Integer> temp = list.set;
+		set.removeAll(temp);
+		IntegerSet list0 = new IntegerSet(set);
+		return list0;
 	}
 }

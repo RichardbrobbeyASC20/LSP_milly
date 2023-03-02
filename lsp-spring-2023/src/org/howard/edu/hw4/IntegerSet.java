@@ -49,5 +49,28 @@ public class IntegerSet{
 		}
 		return false;
 	}
-	
+	public int largest()
+	{
+		int max = 0;
+		for(int i = 0; i < set.size(); i++)
+		{
+			if(set.get(i) > max)
+			{
+				max = set.get(i);
+			}
+		}
+		return max;
+	}
+	public int smallest()
+	{
+		int min = set.get(0);
+		for(int i = 0; i < set.size(); i++)
+		{
+			if(set.get(i) < min)
+			{
+				min = set.get(i);
+			}
+		}
+		return min;
+	}
 }

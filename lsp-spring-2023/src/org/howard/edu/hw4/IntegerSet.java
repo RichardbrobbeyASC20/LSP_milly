@@ -38,5 +38,16 @@ public class IntegerSet{
 		}
 		return true;
 	}
+	public boolean contains(int v)
+	{
+		for(int i = 0; i< set.size(); i++)
+		{
+			if(v == set.get(i))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }

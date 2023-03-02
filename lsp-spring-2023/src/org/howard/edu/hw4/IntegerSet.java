@@ -88,4 +88,14 @@ public class IntegerSet{
 			set.add(item);
 		}
 	}
+	public void remove(int item)
+	{
+		for(int i = 0; i<set.size();i++)
+		{
+			if(set.get(i) == item)
+			{
+				set.remove(i);
+			}
+		}
+	}
 }

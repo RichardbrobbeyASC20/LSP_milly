@@ -2,6 +2,7 @@
 package org.howard.edu.hw4;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.*;
 
 public class IntegerSet{
 	ArrayList<Integer> set = new ArrayList<Integer>();
@@ -97,5 +98,15 @@ public class IntegerSet{
 				set.remove(i);
 			}
 		}
+	}
+	public IntegerSet union(IntegerSet set2)
+	{
+		ArrayList<Integer> temp = set;
+		Set<Integer> st = new HashSet<>();
+		st.addAll(set);
+		st.addAll(temp);
+		ArrayList<Integer> temp2 = new ArrayList<>(st);
+		IntegerSet lt = new IntegerSet(temp2);
+		return lt;
 	}
 }

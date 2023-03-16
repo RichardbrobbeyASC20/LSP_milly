@@ -135,8 +135,8 @@ public class IntegerSet{
 		}
 		return output;
 	}
-	public void intersect()
+	public void intersect(IntegerSet intsetb)
 	{
-		
+		set.retainAll(intsetb.set);
 	}
 }

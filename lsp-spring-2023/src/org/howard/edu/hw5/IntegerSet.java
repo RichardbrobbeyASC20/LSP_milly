@@ -1,5 +1,5 @@
 //Richard Brobbey
-package org.howard.edu.hw4;
+package org.howard.edu.hw5;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.*;
@@ -134,5 +134,9 @@ public class IntegerSet{
 			output = output + set.get(i) + ", ";
 		}
 		return output;
+	}
+	public void intersect()
+	{
+		
 	}
 }

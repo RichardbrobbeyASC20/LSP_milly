@@ -1,14 +1,18 @@
 package org.howard.edu.lsp.midterm.problem51;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.howard.edu.lsp.midterm.problem51.Range.EmptyRangeException;
 class RangeTest{
 	IntegerRange range;
-	@BeforeEach
+	@Before
 	void setUp() throws Exception {
 		range = new IntegerRange(5, 25);
 	}
-	@AfterEach
+	@After
 	void clear() throws Exception {
 		range = null;
 	}
@@ -33,7 +37,7 @@ class RangeTest{
 	}
 	@Test 
 	@DisplayName("Test for overlaps")
-	void testContains() {
+	void testOverlaps() {
 		IntegerRange rangee;
 		rangee = new IntegerRange(5, 10);
 		Assertions.assertTrue(range.overlaps(rangee));
@@ -44,4 +48,16 @@ class RangeTest{
 		Assertions.assertFalse(rangee.overlaps(range));
 		
 	}
+	@Test 
+	@DisplayName("Test for size")
+	void testSize() {
+		IntegerRange rangee;
+		rangee = new IntegerRange(0,50);
+		Assertions.assertEquals(rangee.size(), 50);
+		rangee = new IntegerRange(0,20);
+		Assertions.assertEquals(rangee.size(), 20);
+		
+
+	}
+	
 }

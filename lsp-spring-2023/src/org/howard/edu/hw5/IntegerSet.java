@@ -5,11 +5,19 @@ import java.util.Collections;
 import java.util.*;
 
 public class IntegerSet{
-	ArrayList<Integer> set = new ArrayList<Integer>();
+	List<Integer> set;
 	
-	public IntegerSet(ArrayList list)
+	public IntegerSet()
 	{
-		this.set = list;
+		set = new ArrayList<Integer>();
+	}
+	public class IntegerSetException extends Exception {
+		public IntegerSetException(String error) {
+			super(error);
+		}
+	}
+	public List<Integer> getset(){
+		return set;
 	}
 	public void clear()
 	{
@@ -25,19 +33,9 @@ public class IntegerSet{
 		{
 			return false;
 		}
-		ArrayList<Integer> temp = set;
-		ArrayList<Integer> temp2 = set2;
-		Collections.sort(temp);
-		Collections.sort(temp2);
-		
-		for(int i = 0; i < temp.size(); i++)
-		{
-			if(temp.get(i) != temp2.get(i))
-			{
-				return false;
-			}
+		else {
+			return set.containsAll(set2);
 		}
-		return true;
 	}
 	public boolean contains(int v)
 	{
@@ -50,20 +48,25 @@ public class IntegerSet{
 		}
 		return false;
 	}
-	public int largest()
-	{
-		int max = 0;
-		for(int i = 0; i < set.size(); i++)
-		{
-			if(set.get(i) > max)
-			{
-				max = set.get(i);
-			}
+	public int largest() throws IntegerSetException{
+		if(set.isEmpty()) {
+			throw new IntegerSetException("The set is empty.");
 		}
-		return max;
+		else {
+			int max = set.get(0);
+			for(int i = 0; i < set.size(); i++) {
+				if(set.get(i) > l) {
+					max = set.get(i);
+				}
+			}
+			return l;
+		}
 	}
-	public int smallest()
+	public int smallest() throws IntegerSetException
 	{
+		if(set.isEmpty()) {
+			thow new IntegerSetException("This IntegerSet is empty.")
+		}
 		int min = set.get(0);
 		for(int i = 0; i < set.size(); i++)
 		{

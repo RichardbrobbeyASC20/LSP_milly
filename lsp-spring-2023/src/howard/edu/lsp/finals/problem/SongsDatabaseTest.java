@@ -37,6 +37,7 @@ class SongsDatabaseTest {
 		assertTrue(rap_songs.contains("Gods Plan"));
 		assertTrue(rap_songs.contains("Thriller"));
 		assertFalse(rap_songs.contains("Super Freaky Girl"));
+		
 	}
 	
 	@Test

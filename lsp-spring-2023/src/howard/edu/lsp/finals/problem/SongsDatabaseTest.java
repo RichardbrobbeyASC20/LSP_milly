@@ -47,5 +47,6 @@ class SongsDatabaseTest {
 		me.addSong("R&B", "One in a million");
 		assertEquals("Rap", me.getGenre("SICKO MODE"));
 		assertEquals("R&B", me.getGenre("Waves"));
+		System.out.println(me.getSongs("Rap"));
 	}
 }
